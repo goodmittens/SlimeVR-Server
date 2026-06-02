@@ -194,7 +194,7 @@ export class BoneKind extends Bone {
       case BodyPart.UPPER_CHEST:
         return new Color('chartreuse');
       case BodyPart.CHEST:
-        return new Color('purple');
+        return new Color('dodgerblue');
       case BodyPart.WAIST:
         return new Color('red');
       case BodyPart.HIP:

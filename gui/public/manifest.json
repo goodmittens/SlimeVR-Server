@@ -1,10 +1,10 @@
 {
-  "name": "SlimeVR GUI",
-  "short_name": "SlimeVR GUI",
-  "description": "A web interface for controlling the SlimeVR Server software",
+  "name": "Mocap Studio",
+  "short_name": "Mocap Studio",
+  "description": "A desktop interface for DIY mocap trackers and Blender-friendly capture workflows.",
   "display": "standalone",
-  "theme_color": "#663499",
-  "background_color": "#663499",
+  "theme_color": "#1BA299",
+  "background_color": "#030D18",
   "icons": [
     {
       "src": "logo.svg",

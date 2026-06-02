@@ -26,6 +26,7 @@ import { useAtomValue } from 'jotai';
 import { connectedIMUTrackersAtom } from '@/store/app-store';
 import { useElectron } from '@/hooks/electron';
 import { openUrl } from '@/hooks/crossplatform';
+import { APP_NAME } from '@/branding';
 
 export function VersionTag() {
   return (
@@ -156,7 +157,7 @@ export function TopBar({
                   className={classNames('flex justify-around flex-col')}
                   data-electron-drag-region
                 >
-                  <Typography>SlimeVR</Typography>
+                  <Typography>{APP_NAME}</Typography>
                 </div>
               )}
               {(!doesMatchSettings || !isMobile) && <VersionTag />}
@@ -175,10 +176,7 @@ export function TopBar({
                 <div
                   className="cursor-pointer"
                   onClick={() => {
-                    const url =
-                      electron.data().os.type === 'windows'
-                        ? 'https://slimevr.dev/download'
-                        : `https://github.com/${GH_REPO}/releases/latest`;
+                    const url = `https://github.com/${GH_REPO}/releases/latest`;
                     openUrl(url);
                   }}
                 >

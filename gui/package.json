@@ -1,8 +1,7 @@
 {
-  "name": "slimevr",
+  "name": "mocap-studio",
   "version": "0.0.0",
-  "author": "SlimeVR Team <contact@slimevr.dev>",
-  "homepage": "https://slimevr.dev",
+  "author": "Mocap Studio Contributors",
   "type": "module",
   "dependencies": {
     "@ryuziii/discord-rpc": "1.0.1-rc.1",

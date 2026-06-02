@@ -6,11 +6,9 @@ import { Typography } from './commons/Typography';
 import semver from 'semver';
 import { GH_REPO, VersionContext } from '@/App';
 import { error } from '@/utils/logging';
-import { useElectron } from '@/hooks/electron';
 import { openUrl } from '@/hooks/crossplatform';
 
 export function VersionUpdateModal() {
-  const electron = useElectron();
   const { l10n } = useLocalization();
   const newVersion = useContext(VersionContext);
   const [forceClose, setForceClose] = useState(false);
@@ -53,10 +51,7 @@ export function VersionUpdateModal() {
           <Button
             variant="primary"
             onClick={async () => {
-              const url =
-                electron.isElectron && electron.data().os.type === 'windows'
-                  ? 'https://slimevr.dev/download'
-                  : `https://github.com/${GH_REPO}/releases/latest`;
+              const url = `https://github.com/${GH_REPO}/releases/latest`;
               await openUrl(url);
               closeModal();
             }}

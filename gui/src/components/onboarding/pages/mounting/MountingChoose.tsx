@@ -7,6 +7,49 @@ import { Typography } from '@/components/commons/Typography';
 import { Button } from '@/components/commons/Button';
 import * as Sentry from '@sentry/react';
 
+function TrackerBadge({
+  animated,
+  onMouseEnter,
+  onAnimationEnd,
+}: {
+  animated: boolean;
+  onMouseEnter: () => void;
+  onAnimationEnd: () => void;
+}) {
+  return (
+    <svg
+      onMouseEnter={onMouseEnter}
+      onAnimationEnd={onAnimationEnd}
+      className={classNames(
+        'absolute w-[92px] h-[92px] -right-2 -top-10',
+        animated && 'animate-[bounce_1s_1]'
+      )}
+      viewBox="0 0 92 92"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <rect
+        x="26"
+        y="12"
+        width="40"
+        height="68"
+        rx="12"
+        className="fill-background-50 stroke-background-20"
+        strokeWidth="4"
+      />
+      <path
+        d="M46 26v34M38 36h16M38 50h16"
+        className="stroke-accent-background-20"
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+      <circle cx="26" cy="74" r="7" className="fill-status-special" />
+      <circle cx="66" cy="74" r="7" className="fill-accent-background-20" />
+    </svg>
+  );
+}
+
 export function MountingChoose() {
   const { l10n } = useLocalization();
   const { applyProgress, skipSetup, state } = useOnboarding();
@@ -88,14 +131,10 @@ export function MountingChoose() {
               <div className="flex flex-col gap-4">
                 <div className="flex flex-grow flex-col gap-4 max-w-sm">
                   <div>
-                    <img
+                    <TrackerBadge
                       onMouseEnter={() => setAnimated(() => true)}
                       onAnimationEnd={() => setAnimated(() => false)}
-                      src="/images/boxslime.webp"
-                      className={classNames(
-                        'absolute w-[100px] -right-2 -top-10',
-                        animated && 'animate-[bounce_1s_1]'
-                      )}
+                      animated={animated}
                     />
                     <Typography variant="main-title" bold>
                       {l10n.getString(

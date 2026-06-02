@@ -60,11 +60,17 @@ import { ElectronContextC, provideElectron } from './hooks/electron';
 import { AppLocalizationProvider } from './i18n/config';
 import { openUrl } from './hooks/crossplatform';
 import { UdevRulesModal } from './components/onboarding/UdevRulesModal';
+import {
+  COMMUNITY_LINK,
+  DOCS_SITE,
+  ENABLE_UPSTREAM_UPDATE_CHECK,
+  UPSTREAM_REPO,
+} from './branding';
 
-export const GH_REPO = 'SlimeVR/SlimeVR-Server';
+export const GH_REPO = UPSTREAM_REPO;
 export const VersionContext = createContext('');
-export const DOCS_SITE = 'https://docs.slimevr.dev';
-export const SLIMEVR_DISCORD = 'https://discord.gg/slimevr';
+export const SLIMEVR_DISCORD = COMMUNITY_LINK;
+export { DOCS_SITE } from './branding';
 
 const SentryRoutes = withSentryReactRouterV6Routing(Routes);
 
@@ -216,6 +222,7 @@ export default function App() {
   useEffect(() => {
     // don't show update stuff when on android
     if (window.__ANDROID__?.isThere()) return;
+    if (!ENABLE_UPSTREAM_UPDATE_CHECK) return;
 
     if (!semver.valid(__VERSION_TAG__)) {
       log(

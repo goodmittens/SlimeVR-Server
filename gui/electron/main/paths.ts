@@ -8,7 +8,7 @@ import { existsSync } from 'node:fs';
 import { options } from './cli';
 
 const javaBin = getPlatform() === 'windows' ? 'java.exe' : 'java';
-export const CONFIG_IDENTIFIER = 'dev.slimevr.SlimeVR';
+export const CONFIG_IDENTIFIER = 'dev.mocapstudio.MocapStudio';
 
 export const getGuiDataFolder = () => {
   const platform = getPlatform();

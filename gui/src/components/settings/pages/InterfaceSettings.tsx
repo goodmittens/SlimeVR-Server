@@ -7,7 +7,7 @@ import {
   SettingsPageLayout,
   SettingsPagePaneLayout,
 } from '@/components/settings/SettingsPageLayout';
-import { defaultConfig, useConfig } from '@/hooks/config';
+import { defaultConfig, normalizeTheme, useConfig } from '@/hooks/config';
 import { ThemeSelector } from '@/components/commons/ThemeSelector';
 import { SquaresIcon } from '@/components/commons/icon/SquaresIcon';
 import { NumberSelector } from '@/components/commons/NumberSelector';
@@ -50,7 +50,7 @@ export function InterfaceSettings() {
   const { control, watch, handleSubmit } = useForm<InterfaceSettingsForm>({
     defaultValues: {
       appearance: {
-        theme: config?.theme ?? defaultConfig.theme,
+        theme: normalizeTheme(config?.theme ?? defaultConfig.theme),
         textSize: config?.textSize ?? defaultConfig.textSize,
         fonts: config?.fonts.join(',') ?? defaultConfig.fonts.join(','),
       },
@@ -387,32 +387,32 @@ export function InterfaceSettings() {
                 <ThemeSelector
                   control={control}
                   name="appearance.theme"
-                  value={'slime'}
-                  colors="!bg-slime"
+                  value={'mocap'}
+                  colors="!bg-mocap"
                 />
                 <ThemeSelector
                   control={control}
                   name="appearance.theme"
-                  value={'slime-green'}
-                  colors="!bg-slime-green"
+                  value={'green'}
+                  colors="!bg-green"
                 />
                 <ThemeSelector
                   control={control}
                   name="appearance.theme"
-                  value={'slime-yellow'}
-                  colors="!bg-slime-yellow"
+                  value={'yellow'}
+                  colors="!bg-yellow"
                 />
                 <ThemeSelector
                   control={control}
                   name="appearance.theme"
-                  value={'slime-orange'}
-                  colors="!bg-slime-orange"
+                  value={'orange'}
+                  colors="!bg-orange"
                 />
                 <ThemeSelector
                   control={control}
                   name="appearance.theme"
-                  value={'slime-red'}
-                  colors="!bg-slime-red"
+                  value={'red'}
+                  colors="!bg-red"
                 />
                 <ThemeSelector
                   control={control}
@@ -425,24 +425,6 @@ export function InterfaceSettings() {
                   name="appearance.theme"
                   value={'light'}
                   colors="!bg-light"
-                />
-                <ThemeSelector
-                  control={control}
-                  name="appearance.theme"
-                  value={'trans'}
-                  colors="!bg-trans-flag"
-                />
-                <ThemeSelector
-                  control={control}
-                  name="appearance.theme"
-                  value={'asexual'}
-                  colors="!bg-asexual-flag"
-                />
-                <ThemeSelector
-                  control={control}
-                  name="appearance.theme"
-                  value={'snep'}
-                  colors="!bg-snep"
                 />
               </div>
             </div>

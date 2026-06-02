@@ -57,6 +57,21 @@ export interface ConfigContext {
   saveConfig: () => Promise<void>;
 }
 
+const SUPPORTED_THEMES = new Set([
+  'mocap',
+  'green',
+  'yellow',
+  'orange',
+  'red',
+  'dark',
+  'light',
+]);
+
+export function normalizeTheme(theme: string | null | undefined) {
+  const resolved = theme ?? defaultConfig.theme;
+  return SUPPORTED_THEMES.has(resolved) ? resolved : defaultConfig.theme;
+}
+
 export const defaultConfig: Config = {
   uuid: uuidv4(),
   lang: 'en',
@@ -66,7 +81,7 @@ export const defaultConfig: Config = {
   feedbackSound: true,
   feedbackSoundVolume: 0.5,
   connectedTrackersWarning: true,
-  theme: 'slime',
+  theme: 'mocap',
   textSize: 12,
   fonts: ['poppins'],
   useTray: null,
@@ -98,7 +113,9 @@ const store: CrossStorage = window.electronAPI
   : localStore;
 
 function fallbackToDefaults(loadedConfig: any): Config {
-  return Object.assign({}, defaultConfig, loadedConfig);
+  const merged = Object.assign({}, defaultConfig, loadedConfig);
+  merged.theme = normalizeTheme(merged.theme);
+  return merged;
 }
 
 // Move the load of the config ouside of react
@@ -138,11 +155,16 @@ export function useConfigProvider(initialConfig: Config | null): ConfigContext {
   );
 
   const setConfig = async (config: Partial<Config>) => {
+    const nextConfig =
+      'theme' in config
+        ? ({ ...config, theme: normalizeTheme(config.theme) } as Partial<Config>)
+        : config;
+
     set((curr) =>
-      config
+      nextConfig
         ? ({
             ...curr,
-            ...config,
+            ...nextConfig,
           } as Config)
         : null
     );
@@ -152,7 +174,7 @@ export function useConfigProvider(initialConfig: Config | null): ConfigContext {
           const newConfig: Partial<Config> = JSON.parse(
             (await store.get('config.json')) ?? '{}'
           );
-          return Object.entries(config).every(([key, value]) =>
+          return Object.entries(nextConfig).every(([key, value]) =>
             typeof value === 'object'
               ? JSON.stringify(newConfig[key as keyof Config]) === JSON.stringify(value)
               : newConfig[key as keyof Config] === value
@@ -167,7 +189,7 @@ export function useConfigProvider(initialConfig: Config | null): ConfigContext {
           const newConfig: Partial<Config> = JSON.parse(
             localStorage.getItem('config.json') ?? '{}'
           );
-          return Object.entries(config).every(([key, value]) =>
+          return Object.entries(nextConfig).every(([key, value]) =>
             typeof value === 'object'
               ? JSON.stringify(newConfig[key as keyof Config]) === JSON.stringify(value)
               : newConfig[key as keyof Config] === value

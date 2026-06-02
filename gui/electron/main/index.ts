@@ -37,6 +37,8 @@ import { ServerStatusEvent } from 'electron/preload/interface';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { MenuItem } from 'electron/main';
 
+const APP_NAME = 'Mocap Studio';
+
 type Stores = Awaited<ReturnType<typeof initStores>>;
 let stores: Stores;
 
@@ -47,6 +49,7 @@ if (process.platform === 'linux') {
   app.commandLine.appendSwitch('force-color-profile', 'srgb');
 }
 
+app.setName(APP_NAME);
 app.setPath('userData', getGuiDataFolder());
 app.setPath('sessionData', join(getGuiDataFolder(), 'electron'));
 
@@ -311,7 +314,7 @@ function createWindow() {
     getPlatform() === 'macos' ? appleTrayIcon : trayIcon
   );
   const tray = new Tray(icon);
-  tray.setToolTip('SlimeVR');
+  tray.setToolTip(APP_NAME);
   tray.on('click', () => {
     mainWindow?.show();
   });
@@ -376,8 +379,8 @@ const checkEnvironmentVariables = () => {
   const set = to_check.filter((env) => !!process.env[env]);
   if (set.length > 0) {
     dialog.showErrorBox(
-      'SlimeVR',
-      `You have environment variables ${set.join(', ')} set, which may cause the SlimeVR Server to fail to launch properly.`
+      APP_NAME,
+      `You have environment variables ${set.join(', ')} set, which may cause the Mocap Studio server to fail to launch properly.`
     );
     app.quit();
   }
@@ -403,7 +406,7 @@ const spawnServer = async () => {
   const javaBin = await findSystemJRE(sharedDir);
   if (!javaBin) {
     dialog.showErrorBox(
-      'SlimeVR',
+      APP_NAME,
       `Couldn't find a compatible Java version, please download Java 17 or higher`
     );
     app.quit();
@@ -486,7 +489,7 @@ app.whenReady().then(async () => {
   } catch (err) {
     logger.error(err, 'Failed to initialize stores');
     dialog.showErrorBox(
-      'SlimeVR',
+      APP_NAME,
       'Failed to initialize application storage. Please make sure the application has write permissions to its data folder.'
     );
     app.quit();
@@ -499,7 +502,7 @@ app.whenReady().then(async () => {
 
   createWindow();
 
-  logger.info('SlimeVR started!');
+  logger.info('Mocap Studio started!');
 
   app.on('window-all-closed', () => {
     app.quit();

@@ -7,7 +7,7 @@ const transport = pino.transport({
     {
       target: 'pino-roll',
       options: {
-        file: join(getLogsFolder(), 'slimevr-gui.log'),
+        file: join(getLogsFolder(), 'mocap-studio-gui.log'),
         frequency: 'daily',
         size: '10m',
         mkdir: true,

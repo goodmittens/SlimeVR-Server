@@ -7,15 +7,15 @@
 ## Websocket (server) status
 websocket-connecting = Loading...
 websocket-connection_lost = The server crashed!
-websocket-connection_lost-desc = It looks like the SlimeVR server crashed. Check the logs and restart the program.
+websocket-connection_lost-desc = It looks like the Mocap Studio server crashed. Check the logs and restart the program.
 websocket-timedout = Could not connect to the server
-websocket-timedout-desc = It looks like the SlimeVR server crashed or timed out. Check the logs and restart the program.
-websocket-error-close = Exit SlimeVR
+websocket-timedout-desc = It looks like the Mocap Studio server crashed or timed out. Check the logs and restart the program.
+websocket-error-close = Exit Mocap Studio
 websocket-error-logs = Open the logs Folder
 
 ## Update notification
 version_update-title = New version available: { $version }
-version_update-description = Clicking "{ version_update-update }" will download the SlimeVR installer for you.
+version_update-description = Clicking "{ version_update-update }" will open the latest release page.
 version_update-update = Update
 version_update-close = Close
 
@@ -24,7 +24,7 @@ tips-find_tracker = Not sure which tracker is which? Shake a tracker and it will
 tips-do_not_move_heels = Ensure your heels do not move during recording!
 tips-file_select = Drag & drop files to use, or <u>browse</u>.
 tips-tap_setup = You can slowly tap your tracker 2 times to choose it instead of selecting it from the menu.
-tips-turn_on_tracker = Using official SlimeVR trackers? Don't forget to <b><em>turn on your tracker</em></b> after connecting it to the PC!
+tips-turn_on_tracker = Using USB-connected trackers? Don't forget to <b><em>turn on your tracker</em></b> after connecting it to the PC!
 tips-failed_webgl = Failed to initialize WebGL.
 
 ## Units
@@ -303,7 +303,7 @@ widget-developer_mode = Developer Mode
 widget-developer_mode-high_contrast = High contrast
 widget-developer_mode-precise_rotation = Precise rotation
 widget-developer_mode-fast_data_feed = Fast data feed
-widget-developer_mode-filter_slimes_and_hmd = Filter Slimes and HMD
+widget-developer_mode-filter_slimes_and_hmd = Filter trackers and HMD
 widget-developer_mode-sort_by_name = Sort by name
 widget-developer_mode-raw_slime_rotation = Raw rotation
 widget-developer_mode-more_info = More info
@@ -406,7 +406,7 @@ tracker-settings-name_section-description = Give it a cute nickname :)
 tracker-settings-name_section-placeholder = NightyBeast's left leg
 tracker-settings-name_section-label = Tracker name
 tracker-settings-forget = Forget tracker
-tracker-settings-forget-description = Removes the tracker from the SlimeVR Server and prevents it from connecting until the server is restarted. The configuration of the tracker won't be lost.
+tracker-settings-forget-description = Removes the tracker from the Mocap Studio server and prevents it from connecting until the server is restarted. The configuration of the tracker won't be lost.
 tracker-settings-forget-label = Forget tracker
 tracker-settings-update-unavailable-v2 = No releases found
 tracker-settings-update-incompatible = Cannot update. Incompatible board or firmware version
@@ -525,7 +525,7 @@ settings-general-steamvr-trackers-tracker_toggling = Automatic tracker assignmen
 settings-general-steamvr-trackers-tracker_toggling-description = Automatically handles toggling SteamVR trackers on or off depending on your current tracker assignments.
 settings-general-steamvr-trackers-tracker_toggling-label = Automatic tracker assignment
 settings-general-steamvr-trackers-hands-warning = <b>Warning:</b> Enabling the SteamVR hand trackers will disable inputs from real controllers.
-    This should only be enabled if you are using SlimeVR for hand tracking.
+    This should only be enabled if you are using Mocap Studio for hand tracking.
 
     Are you sure you want to do this?
 settings-general-steamvr-trackers-hands-warning-cancel = Cancel
@@ -739,7 +739,7 @@ settings-general-interface-feedback_sound-description = This option plays a soun
 settings-general-interface-feedback_sound-label = Feedback sound
 settings-general-interface-feedback_sound-volume = Feedback sound volume
 settings-general-interface-connected_trackers_warning = Connected trackers warning
-settings-general-interface-connected_trackers_warning-description = This option will show a pop-up every time you try exiting SlimeVR while having one or more connected trackers. It reminds you to turn off your trackers when you are done to preserve battery life.
+settings-general-interface-connected_trackers_warning-description = This option will show a pop-up every time you try exiting Mocap Studio while having one or more connected trackers. It reminds you to turn off your trackers when you are done to preserve battery life.
 settings-general-interface-connected_trackers_warning-label = Connected trackers warning on exit
 
 ## Behavior settings
@@ -748,10 +748,10 @@ settings-general-interface-dev_mode = Developer Mode
 settings-general-interface-dev_mode-description = This mode can be useful if you need in-depth data or need to interact with connected trackers on a more advanced level.
 settings-general-interface-dev_mode-label = Developer Mode
 settings-general-interface-use_tray = Minimize to system tray
-settings-general-interface-use_tray-description = Lets you close the window without closing the SlimeVR Server so you can continue using it without having the GUI bother you.
+settings-general-interface-use_tray-description = Lets you close the window without closing the Mocap Studio server so you can continue using it without having the GUI bother you.
 settings-general-interface-use_tray-label = Minimize to system tray
 settings-general-interface-discord_presence = Share activity on Discord
-settings-general-interface-discord_presence-description = Tells your Discord client that you are using SlimeVR along with the number of IMU trackers you are using.
+settings-general-interface-discord_presence-description = Tells your Discord client that you are using Mocap Studio along with the number of IMU trackers you are using.
 settings-general-interface-discord_presence-label = Share activity on Discord
 settings-general-interface-discord_presence-message = { $amount ->
     [0] Sliming around
@@ -762,9 +762,9 @@ settings-interface-behavior-error_tracking = Error collection via Sentry.io
 settings-interface-behavior-error_tracking-description_v2 =
     <h1>Do you consent to the collection of anonymized error data?</h1>
 
-    <b>We do not collect personal information</b> such as your IP address or wireless credentials. SlimeVR values your privacy!
+    <b>We do not collect personal information</b> such as your IP address or wireless credentials. Mocap Studio values your privacy!
 
-    To provide the best user experience, we collect anonymized error reports, performance metrics, and operating system information. This helps us detect bugs and issues with SlimeVR. These metrics are collected via Sentry.io.
+    To provide the best user experience, we collect anonymized error reports, performance metrics, and operating system information. This helps us detect bugs and issues with Mocap Studio. These metrics are collected via Sentry.io.
 
 settings-interface-behavior-error_tracking-label = Send errors to developers
 settings-interface-behavior-bvh_directory = Directory to save BVH recordings
@@ -812,7 +812,7 @@ settings-osc-router-network = Network ports
 # This cares about multilines
 settings-osc-router-network-description =
     Set the ports for listening and sending data.
-    These can be the same as other ports used in the SlimeVR server.
+    These can be the same as other ports used in the Mocap Studio server.
 settings-osc-router-network-port_in =
     .label = Port In
     .placeholder = Port in (default: 9002)
@@ -864,7 +864,7 @@ settings-osc-vmc = Virtual Motion Capture
 # This cares about multilines
 settings-osc-vmc-description =
     Change settings specific to the VMC (Virtual Motion Capture) protocol
-    to send SlimeVR's bone data and receive bone data from other apps.
+    to send Mocap Studio bone data and receive bone data from other apps.
 settings-osc-vmc-enable = Enable
 settings-osc-vmc-enable-description = Toggle the sending and receiving of data.
 settings-osc-vmc-enable-label = Enable
@@ -917,10 +917,10 @@ settings-utils-advanced-reset_warning-reset = Reset settings
 settings-utils-advanced-reset_warning-cancel = Cancel
 
 settings-utils-advanced-open_data-v1 = Config folder
-settings-utils-advanced-open_data-description-v1 = Open SlimeVR's config folder in file explorer, containing the configuration
+settings-utils-advanced-open_data-description-v1 = Open Mocap Studio's config folder in file explorer, containing the configuration
 settings-utils-advanced-open_data-label = Open folder
 settings-utils-advanced-open_logs = Logs folder
-settings-utils-advanced-open_logs-description = Open SlimeVR's logs folder in file explorer, containing the logs of the app
+settings-utils-advanced-open_logs-description = Open Mocap Studio's logs folder in file explorer, containing the logs of the app
 settings-utils-advanced-open_logs-label = Open folder
 
 ## Home Screen
@@ -940,7 +940,7 @@ onboarding-wip = Work in progress
 onboarding-previous_step = Previous step
 onboarding-setup_warning =
     <b>Warning:</b> The initial setup is required for good tracking,
-    it is needed if this is your first time using SlimeVR.
+    it is needed if this is your first time using Mocap Studio.
 onboarding-setup_warning-skip = Skip setup
 onboarding-setup_warning-cancel = Continue setup
 
@@ -955,15 +955,15 @@ onboarding-quiz-more_sets_modal-cancel = I want to connect more trackers
 
 onboarding-quiz-slimeset-title = What type of trackers are you connecting?
 onboarding-quiz-slimeset-description = If you have multiple sets, you will be asked again later in the process
-onboarding-quiz-slimeset-official-sets = Official SlimeVR Trackers
+onboarding-quiz-slimeset-official-sets = Prebuilt tracker kits
 onboarding-quiz-slimeset-thirdparty-sets = Third-party or DIY Trackers
-onboarding-quiz-slimeset-answer-regular = SlimeVR V1.0 & V1.2
+onboarding-quiz-slimeset-answer-regular = Standard Wi-Fi tracker kit
 onboarding-quiz-slimeset-answer-butterfly = Butterfly
-onboarding-quiz-slimeset-answer-wifi = WiFi-based Slime
-onboarding-quiz-slimeset-answer-dongle = Dongle-based Slime
+onboarding-quiz-slimeset-answer-wifi = Wi-Fi based tracker
+onboarding-quiz-slimeset-answer-dongle = USB receiver based tracker
 
 onboarding-quiz-usage-title = What are you using your trackers for?
-onboarding-quiz-usage-description = If you plan on using SlimeVR for multiple purposes, you can change the affected settings later.
+onboarding-quiz-usage-description = If you plan on using Mocap Studio for multiple purposes, you can change the affected settings later.
 onboarding-quiz-usage-answer-VRC = VR Gaming (e.g. VRChat)
 onboarding-quiz-usage-answer-mocap_vtubing = Mocap and VTubing
 
@@ -972,9 +972,9 @@ onboarding-quiz-runtime-answer-steamvr = SteamVR
 onboarding-quiz-runtime-answer-standalone = Standalone
 
 onboarding-quiz-mocap_preferences-title = Mocap Preferences
-onboarding-quiz-mocap_preferences-desc = Specify how you plan to use SlimeVR for mocap or VTubing
+onboarding-quiz-mocap_preferences-desc = Specify how you plan to use Mocap Studio for mocap or VTubing
 onboarding-quiz-mocap_preferences-playspace-title = What is your playspace?
-onboarding-quiz-mocap_preferences-playspace-desc = If standing, SlimeVR will try to track walking movement instead of anchoring you in one spot.
+onboarding-quiz-mocap_preferences-playspace-desc = If standing, Mocap Studio will try to track walking movement instead of anchoring you in one spot.
 onboarding-quiz-mocap_preferences-playspace-sitting = Sitting
 onboarding-quiz-mocap_preferences-playspace-standing = Standing
 onboarding-quiz-mocap_preferences-vrm_model-title = Do you have a VRM model? (Optional)
@@ -991,7 +991,7 @@ onboarding-wifi_creds-back-v2 = Go back
 onboarding-wifi_creds-v2 = Trackers using Wi-Fi
 # This cares about multilines
 onboarding-wifi_creds-description-v2 =
-    Most trackers (such as official SlimeVR trackers) use Wi-Fi to connect to the server.
+    Most DIY trackers use Wi-Fi to connect to the server.
     Please use the credentials of the Wi-Fi network your device is currently connected to.
 
     Make sure to use a 2.4GHz Wi-Fi connection for your trackers!
@@ -1038,7 +1038,7 @@ install-info_udev-rules_warning = Access rules via udev are required for serial 
 install-info_udev-rules_modal_button = Close
 install-info_udev-rules_modal-dont-show-again_checkbox = Don't show again
 ## Setup start
-onboarding-home = Welcome to SlimeVR
+onboarding-home = Welcome to Mocap Studio
 onboarding-home-start = Let's get set up!
 
 
@@ -1073,7 +1073,7 @@ onboarding-connect_serial-error-modal-no_serial_device_found-desc =
     If this does not work:
       - try using a different USB cable
       - try using a different USB port
-      - try reinstalling the SlimeVR server and select "USB Drivers" in the components section
+      - try reinstalling Mocap Studio and select "USB Drivers" in the components section
 # $amount (Number) - Amount of trackers connected (this is a number, but you can use CLDR plural rules for your language)
 # More info on https://www.unicode.org/cldr/cldr-aux/charts/22/supplemental/language_plural_rules.html
 # English in this case only has 2 plural rules, which are "one" and "other",
@@ -1098,11 +1098,11 @@ onboarding-calibration_tutorial-status-error = The tracker was moved
 onboarding-calibration_tutorial-skip = Skip tutorial
 
 ## Tracker assignment tutorial
-onboarding-assignment_tutorial = How to prepare a Slime Tracker before putting it on
+onboarding-assignment_tutorial = How to prepare a tracker before putting it on
 onboarding-assignment_tutorial-first_step = 1. Place a body part sticker (if you have one) on the tracker according to your choosing
 # This text has a character limit of around 11 characters, so please keep it short
 onboarding-assignment_tutorial-sticker = Sticker
-onboarding-assignment_tutorial-second_step-v2 = 2. Attach the strap to your tracker, keeping the velcro side of the strap facing the same direction as the slime face of your tracker:
+onboarding-assignment_tutorial-second_step-v2 = 2. Attach the strap to your tracker, keeping the velcro side of the strap facing the same direction as the front mark of your tracker:
 onboarding-assignment_tutorial-second_step-continuation-v2 = The velcro side for the extension should be facing up like the following image:
 onboarding-assignment_tutorial-done = I put stickers and straps!
 
@@ -1228,7 +1228,7 @@ onboarding-manual_mounting-next = Next step
 ## Tracker automatic mounting setup
 onboarding-automatic_mounting-back = Go back to Enter VR
 onboarding-automatic_mounting-title = Mounting Calibration
-onboarding-automatic_mounting-description = For SlimeVR trackers to work, we need to assign a mounting orientation to your trackers to align them with your physical tracker mounting.
+onboarding-automatic_mounting-description = For your trackers to work, we need to assign a mounting orientation to align them with your physical tracker mounting.
 onboarding-automatic_mounting-manual_mounting = Manual mounting
 onboarding-automatic_mounting-next = Next step
 onboarding-automatic_mounting-prev_step = Previous step
@@ -1268,7 +1268,7 @@ onboarding-manual_proportions-estimated_height = Estimated user height
 ## Tracker automatic proportions setup
 onboarding-automatic_proportions-back = Go back to Manual Proportions
 onboarding-automatic_proportions-title = Measure your body
-onboarding-automatic_proportions-description = For SlimeVR trackers to work, we need to know the length of your bones. This short calibration will measure it for you.
+onboarding-automatic_proportions-description = For your trackers to work, we need to know the length of your bones. This short calibration will measure it for you.
 onboarding-automatic_proportions-manual = Manual proportions
 onboarding-automatic_proportions-prev_step = Previous step
 
@@ -1281,8 +1281,8 @@ onboarding-automatic_proportions-requirements-title = Requirements
 onboarding-automatic_proportions-requirements-descriptionv2 =
     You have at least enough trackers to track your feet (generally 5 trackers).
     You have your trackers and headset on and are wearing them.
-    Your trackers and headset are connected to the SlimeVR server and are working properly (ex. no stuttering, disconnecting, etc).
-    Your headset is reporting positional data to the SlimeVR server (this generally means having SteamVR running and connected to SlimeVR using SlimeVR's SteamVR driver).
+    Your trackers and headset are connected to the Mocap Studio server and are working properly (ex. no stuttering, disconnecting, etc).
+    Your headset is reporting positional data to the Mocap Studio server (this generally means having SteamVR running and connected through the SteamVR driver).
     Your tracking is working and is accurately representing your movements (ex. you have performed a full reset and they move the right direction when kicking, bending over, sitting, etc).
 onboarding-automatic_proportions-requirements-next = I have read the requirements
 
@@ -1359,7 +1359,7 @@ onboarding-automatic_proportions-smol_warning-cancel = Go back
 
 ## User height calibration
 onboarding-user_height-title = What is your height?
-onboarding-user_height-description = We need your height to calculate your body proportions and accurately represent your movements. You can either let SlimeVR calculate it, or input your height manually.
+onboarding-user_height-description = We need your height to calculate your body proportions and accurately represent your movements. You can either let Mocap Studio calculate it, or input your height manually.
 onboarding-user_height-need_head_tracker = A headset and controllers with positional tracking are required to perform the calibration.
 onboarding-user_height-calculate = Calculate my height automatically
 onboarding-user_height-next_step = Continue and save
@@ -1426,21 +1426,21 @@ home-settings-close = Close
 trackers_still_on-modal-title = Trackers still on
 trackers_still_on-modal-description =
     One or more trackers are still on.
-    Do you still want to exit SlimeVR?
-trackers_still_on-modal-confirm = Exit SlimeVR
+    Do you still want to exit Mocap Studio?
+trackers_still_on-modal-confirm = Exit Mocap Studio
 trackers_still_on-modal-cancel = Hold on...
 
 ## Status system
 status_system-StatusTrackerReset = It is recommended to perform a full reset as one or more trackers are unadjusted.
 status_system-StatusSteamVRDisconnected = { $type ->
-    *[steamvr] Currently not connected to SteamVR via the SlimeVR driver.
-    [steamvr_feeder] Currently not connected to the SlimeVR Feeder App.
+    *[steamvr] Currently not connected to SteamVR via the tracking driver.
+    [steamvr_feeder] Currently not connected to the feeder app.
 }
 status_system-StatusTrackerError = The { $trackerName } tracker has an error.
 status_system-StatusUnassignedHMD = The VR headset should be assigned as a head tracker.
 status_system-StatusPublicNetwork = {$count ->
-    [one] Your network profile is currently set to Public ({$adapters}). This is not recommended for SlimeVR to function properly. <PublicFixLink>See how to fix it here.</PublicFixLink>
-    *[many] Some of your network adapters are set to public: {$adapters}. This is not recommended for SlimeVR to function properly. <PublicFixLink>See how to fix it here.</PublicFixLink>
+    [one] Your network profile is currently set to Public ({$adapters}). This is not recommended for Mocap Studio to function properly. <PublicFixLink>See how to fix it here.</PublicFixLink>
+    *[many] Some of your network adapters are set to public: {$adapters}. This is not recommended for Mocap Studio to function properly. <PublicFixLink>See how to fix it here.</PublicFixLink>
 }
 
 
@@ -1559,7 +1559,7 @@ firmware_update-status-ERROR_UNKNOWN = Unknown error
 ## Dedicated Firmware Update Page
 firmware_update-title = Firmware update
 firmware_update-devices = Available Devices
-firmware_update-devices-description = Please select the trackers you want to update to the latest version of SlimeVR firmware.
+firmware_update-devices-description = Please select the trackers you want to update to the latest compatible firmware.
 firmware_update-no_devices = Please make sure that the trackers you want to update are ON and connected to the Wi-Fi!
 firmware_update-changelog-title = Updating to {$version}
 firmware_update-looking_for_devices = Looking for devices to update...
@@ -1586,14 +1586,14 @@ tray_or_exit_modal-cancel = Cancel
 ## Unknown device modal
 unknown_device-modal-title = A new tracker was found!
 unknown_device-modal-description = There is a new tracker with MAC address <b>{$deviceId}</b>.
-    Do you want to connect it to SlimeVR?
+    Do you want to connect it to Mocap Studio?
 unknown_device-modal-confirm = Sure!
 unknown_device-modal-forget = Ignore it
 
 
 # VRChat config warnings
 vrc_config-page-title = VRChat configuration warnings
-vrc_config-page-desc = This page shows the state of your VRChat settings and shows what settings are incompatible with SlimeVR. It is highly recommended that you fix any warnings showing up here for the best user experience with SlimeVR.
+vrc_config-page-desc = This page shows the state of your VRChat settings and shows what settings are incompatible with Mocap Studio. It is highly recommended that you fix any warnings showing up here for the best user experience with Mocap Studio.
 vrc_config-page-help = Can't find the settings?
 vrc_config-page-help-desc = Check out our <a>documentation on this topic!</a>
 vrc_config-page-big_menu = Tracking & IK (Big Menu)
@@ -1647,12 +1647,12 @@ error_collection_modal-cancel = I don't want to
 tracking_checklist = Tracking Checklist
 tracking_checklist-settings = Tracking Checklist Settings
 tracking_checklist-settings-close = Close
-tracking_checklist-status-incomplete = You are not prepared to use SlimeVR!
+tracking_checklist-status-incomplete = You are not prepared to use Mocap Studio!
 tracking_checklist-status-partial = {$count ->
     [one] You have 1 warning!
     *[many] You have {$count} warnings!
 }
-tracking_checklist-status-complete = You are prepared to use SlimeVR!
+tracking_checklist-status-complete = You are prepared to use Mocap Studio!
 tracking_checklist-MOUNTING_CALIBRATION = Perform a mounting calibration
 tracking_checklist-FEET_MOUNTING_CALIBRATION = Perform a feet mounting calibration
 tracking_checklist-FULL_RESET = Perform a full reset
@@ -1675,11 +1675,11 @@ tracking_checklist-UNASSIGNED_HMD-desc = The VR headset should be assigned as a 
 tracking_checklist-NETWORK_PROFILE_PUBLIC = Change your network profile
 tracking_checklist-NETWORK_PROFILE_PUBLIC-desc = {$count ->
     [one] Your network profile is currently set to Public ({$adapters}).
-          This is not recommended for SlimeVR to function properly.
+          This is not recommended for Mocap Studio to function properly.
           <PublicFixLink>See how to fix it here.</PublicFixLink>
     *[many] Some of your network adapters are set to public:
             {$adapters}
-            This is not recommended for SlimeVR to function properly.
+            This is not recommended for Mocap Studio to function properly.
             <PublicFixLink>See how to fix it here.</PublicFixLink>
 }
 tracking_checklist-NETWORK_PROFILE_PUBLIC-open = Open Control Panel

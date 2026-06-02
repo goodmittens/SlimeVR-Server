@@ -1,5 +1,5 @@
 import { useLayoutEffect } from 'react';
-import { useConfig } from './hooks/config';
+import { normalizeTheme, useConfig } from './hooks/config';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 export function AppLayout() {
@@ -10,7 +10,7 @@ export function AppLayout() {
   useLayoutEffect(() => {
     if (!config) return;
     if (config.theme !== undefined) {
-      document.documentElement.dataset.theme = config.theme;
+      document.documentElement.dataset.theme = normalizeTheme(config.theme);
     }
 
     if (config.fonts !== undefined) {
